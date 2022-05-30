@@ -1,8 +1,8 @@
-import { Drawer, Box, Typography, List, ListItem, ListItemIcon } from '@mui/material'
+import { Drawer, Box, Typography, List, ListItem, ListItemIcon, ListItemText } from '@mui/material'
 import InboxOutlinedIcon from '@mui/icons-material/InboxOutlined'
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined'
 
-const menuItems = ['Inbox', 'Starred', 'Send email', 'Drafts']
+const menuItems: string[] = ['Inbox', 'Starred', 'Send email', 'Drafts']
 
 export const Sidebar = () => {
   return (
@@ -21,6 +21,7 @@ export const Sidebar = () => {
                 menuItems.map((text, index) => (
                     <ListItem button key={text}>
                         <ListItemIcon>{index % 2 ? <InboxOutlinedIcon /> : <EmailOutlinedIcon /> }</ListItemIcon>
+                        <ListItemText primary={text} />
                     </ListItem>
                 ))
             }
